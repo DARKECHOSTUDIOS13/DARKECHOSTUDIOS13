@@ -1,0 +1,343 @@
+/* General */
+body {
+    font-family: 'Creepster', cursive, sans-serif;
+    background-color: #0d0d0d;
+    color: #e6e6e6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    background-color: rgba(20, 20, 20, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+        gap: 30px;
+    }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+
+            nav ul li a:hover {
+                color: #ff0000;
+                text-shadow: 0 0 10px #ff0000;
+            }
+
+/* Hero Section */
+.hero {
+    padding: 120px 20px 60px 20px;
+    position: relative;
+    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    color: #fff;
+}
+
+    .hero h1 {
+        font-size: 4em;
+        color: #ff0000;
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    .hero p {
+        font-size: 1.5em;
+        margin: 20px 0;
+    }
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 8px;
+    animation: pulse 2s infinite;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        background-color: #cc0000;
+        transform: scale(1.1) rotate(-2deg);
+    }
+
+/* Games Section */
+.games-section {
+    padding: 50px 20px;
+}
+
+    .games-section h2 {
+        font-size: 3em;
+        color: #ff0000;
+        margin-bottom: 40px;
+    }
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.game-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+    .game-card img {
+        width: 100%;
+        border-radius: 8px;
+        transition: transform 0.5s;
+    }
+
+    .game-card:hover img {
+        transform: scale(1.1) rotate(1deg);
+    }
+
+    .game-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px #ff0000;
+    }
+
+/* About Section */
+.about-home {
+    padding: 70px 20px;
+    background-color: #1a1a1a;
+}
+
+    .about-home h2 {
+        font-size: 3em;
+        color: #ff0000;
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    .about-home .about-content {
+        max-width: 800px;
+        margin: auto;
+        font-size: 1.2em;
+        line-height: 1.8em;
+        color: #f0f0f0;
+        text-shadow: 0 0 5px rgba(255,0,0,0.5);
+    }
+
+/* Contact Section */
+.contact-section {
+    padding: 70px 20px;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+    .contact-section h2 {
+        font-size: 3em;
+        color: #ff0000;
+        margin-bottom: 40px;
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        background-color: #0d0d0d;
+        color: #fff;
+    }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #888;
+        }
+
+    .contact-form button {
+        width: 50%;
+        cursor: pointer;
+    }
+
+.contact-email {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #ff0000;
+}
+
+    .contact-email a {
+        color: #ff0000;
+        text-decoration: underline;
+    }
+
+/* Floating Ghosts */
+.ghost {
+    position: fixed;
+    width: 80px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.ghost1 {
+    top: 20%;
+    left: -100px;
+    animation: ghostMove1 30s linear infinite;
+}
+
+.ghost2 {
+    top: 50%;
+    left: -150px;
+    animation: ghostMove2 40s linear infinite;
+}
+
+.ghost3 {
+    top: 70%;
+    left: -120px;
+    animation: ghostMove3 35s linear infinite;
+}
+
+.ghost:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 15px red);
+    transition: transform 0.5s, filter 0.5s;
+}
+
+@keyframes ghostMove1 {
+    0% {
+        left: -100px;
+        top: 20%;
+    }
+
+    50% {
+        left: 100vw;
+        top: 25%;
+    }
+
+    100% {
+        left: -100px;
+        top: 20%;
+    }
+}
+
+@keyframes ghostMove2 {
+    0% {
+        left: -150px;
+        top: 50%;
+    }
+
+    50% {
+        left: 100vw;
+        top: 55%;
+    }
+
+    100% {
+        left: -150px;
+        top: 50%;
+    }
+}
+
+@keyframes ghostMove3 {
+    0% {
+        left: -120px;
+        top: 70%;
+    }
+
+    50% {
+        left: 100vw;
+        top: 75%;
+    }
+
+    100% {
+        left: -120px;
+        top: 70%;
+    }
+}
+
+/* Mist Overlay */
+.mist {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/mist.png') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    font-size: 1em;
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .games-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
